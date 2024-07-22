@@ -15,10 +15,12 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rohitrehan.mobile.react_native_skeleton"
     },
     "web": {
       "favicon": "./assets/favicon.png"
