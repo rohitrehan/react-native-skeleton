@@ -1,16 +1,15 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAuthState } from "../interfaces/IAuthentication";
-import { RootState } from "./appStore";
-import { IAppConfig } from "../interfaces/IAppConfig";
-import { LanguageKey } from "../core/languages";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from './appStore';
+import { IAppConfig } from '../interfaces/IAppConfig';
+import { LanguageKey } from '../core/languages';
 
 const initialState: IAppConfig = {
   language: LanguageKey.en,
 };
 
 export const configSlice = createSlice({
-  name: "config",
+  name: 'config',
   initialState,
   reducers: {
     languageChanged: (state, action: PayloadAction<LanguageKey>) => {

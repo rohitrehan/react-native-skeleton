@@ -1,5 +1,4 @@
-import React from "react";
-import { LanguageKey } from "../core/languages";
+import React from 'react';
 
 export const PreferencesContext = React.createContext({
   toggleTheme: () => {},

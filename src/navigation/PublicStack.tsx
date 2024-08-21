@@ -1,9 +1,8 @@
-import * as React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SignInScreen from "../screens/SignInScreen";
-import SignUpScreen from "../screens/SignUpScreen";
-import ThemeToggle from "./ThemeToggle";
-import WelcomeScreen from "../screens/WelcomeScreen";
+import * as React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SignInScreen from '../screens/SignInScreen';
+import SignUpScreen from '../screens/SignUpScreen';
+import WelcomeScreen from '../screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator<PublicStackParamList>();
 

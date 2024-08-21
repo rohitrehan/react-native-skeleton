@@ -1,18 +1,16 @@
-import React, { memo } from "react";
-import { View, Dimensions, StyleSheet, StatusBar } from "react-native";
-import { Button, overlay, Surface, Text, useTheme } from "react-native-paper";
-import * as Animatable from "react-native-animatable";
-import { ImageOverlay } from "../components/image-overlay";
-import { PreferencesContext } from "../context/PreferencesContext";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { PublicStackParamList } from "../navigation/PublicStack";
-import { languages } from "../core/languages";
-import useLanguage from "../hooks/useLanguage";
-import images from "../core/images";
+import React, { memo } from 'react';
+import { View, StyleSheet, StatusBar } from 'react-native';
+import { Button, Text, useTheme } from 'react-native-paper';
+import * as Animatable from 'react-native-animatable';
+import { ImageOverlay } from '../components/image-overlay';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { PublicStackParamList } from '../navigation/PublicStack';
+import useLanguage from '../hooks/useLanguage';
+import images from '../core/images';
 
 const WelcomeScreen = ({
   navigation,
-}: NativeStackScreenProps<PublicStackParamList, "Welcome">) => {
+}: NativeStackScreenProps<PublicStackParamList, 'Welcome'>) => {
   const theme = useTheme();
   const language = useLanguage();
 
@@ -28,7 +26,7 @@ const WelcomeScreen = ({
           animation="slideInLeft"
         >
           <View style={styles.title}>
-            <Text variant="headlineLarge">{language.WelcomeHeadline2}</Text>
+            <Text variant="headlineLarge">{language.WelcomeHeadline1}</Text>
             <Text variant="headlineLarge">{language.WelcomeHeadline2}</Text>
           </View>
         </Animatable.View>
@@ -45,7 +43,7 @@ const WelcomeScreen = ({
             icon="arrow-right-bold-circle-outline"
             mode="contained"
             compact
-            onPress={() => navigation.navigate("SignIn")}
+            onPress={() => navigation.navigate('SignIn')}
             style={styles.button}
           >
             {language.WelcomeButtonText}
@@ -58,23 +56,22 @@ const WelcomeScreen = ({
 
 export default memo(WelcomeScreen);
 
-const { height } = Dimensions.get("screen");
-const container_height = height * 0.4;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-between",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   contentContainer: {
     flex: 1,
-    alignContent: "center",
-    alignItems: "center",
-    justifyContent: "center",
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   overlay: {},
-  title: {},
+  title: {
+    alignItems: 'center',
+  },
   subtitle: {},
   headerContent: {
     padding: 15,
@@ -86,8 +83,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   surface: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   headingContainer: { marginBottom: 50 },
   sloganContainer: { marginBottom: 50 },

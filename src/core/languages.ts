@@ -1,12 +1,19 @@
-import { en as enLanguage } from "./languages/en";
+import { en as enLanguage } from './languages/en';
 
 export enum LanguageKey {
-  en = "en",
-  hi = "hi",
+  en = 'en',
+  hi = 'hi',
 }
 
 export interface IAppLanguage {
-  labelGoogleSignIn: string;
+  ERROR_PhoneNumberInvalid: string;
+  LABEL_PhoneNumber: string;
+  PLACEHOLDER_PhoneNumber: string;
+  ERROR_PhoneNumberIsRequired: string;
+  LABEL_UseEmailLogin: string;
+  LABEL_UsePhoneLogin: string;
+  LABEL_UseEmailSignup: string;
+  LABEL_UsePhoneSignup: string;
   WelcomeButtonText: string;
   WelcomeHeadline1: string;
   WelcomeHeadline2: string;
@@ -30,6 +37,10 @@ export interface IAppLanguage {
   TITLE_Login: string;
   ERROR_EmailIsRequired: string;
   LABEL_EmailAddress: string;
+  LABEL_EmailLoginButton: string;
+  LABEL_PhoneLoginButton: string;
+  LABEL_PhoneLoginOtpButton: string;
+  LABEL_SignUpEmailButton: string;
 }
 
 export interface ILanguagesMap {

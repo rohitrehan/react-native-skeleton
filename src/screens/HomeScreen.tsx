@@ -1,8 +1,8 @@
-import { StyleSheet, View } from "react-native";
-import React from "react";
-import { useTheme, Text } from "react-native-paper";
-import { useAppSelector } from "../store/hook";
-import { selectAuthState } from "../store/authSlice";
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { useTheme, Text } from 'react-native-paper';
+import { useAppSelector } from '../store/hook';
+import { selectAuthState } from '../store/authSlice';
 
 const HomeScreen = () => {
   const theme = useTheme();
@@ -16,22 +16,23 @@ const HomeScreen = () => {
         ]}
       >
         <Text variant="headlineLarge">
-          Welcome {authState?.userName ?? "Guest"}
+          Welcome {authState?.userName ?? 'Guest'}
         </Text>
         <Text
           style={{ color: theme.colors.onPrimaryContainer }}
           variant="titleLarge"
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium,
-          eum placeat quibusdam voluptate mollitia aliquam error est magnam
-          neque fugiat magni consequuntur nesciunt. Voluptas provident harum
-          saepe laudantium vero officia.
+          RNS is a mobile application designed to help users track and maintain
+          their daily habits, with a focus on sustainability and environmental
+          awareness. Developed using Eact Native, the app allows users to create
+          personalized goals and track their progress towards a more
+          eco-friendly lifestyle.
         </Text>
         <Text
           style={{ color: theme.colors.onPrimaryContainer }}
           variant="titleLarge"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, non?
+          Target Audience:
         </Text>
       </View>
     </>
@@ -43,8 +44,8 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-between",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 15,
   },
 });

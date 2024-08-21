@@ -37,3 +37,4 @@ google-services.json
 build.properties
 build/*
 !build/.gitkeep
+src/core/constants/firebaseConfig.ts

@@ -1,7 +1,9 @@
-import { User, UserCredential, UserInfo } from "firebase/auth";
+// import { User, UserCredential, UserInfo } from "firebase/auth";
+
+import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
 export interface IFirebaseResponse {
-  result: UserCredential | null;
+  result: FirebaseAuthTypes.UserCredential | null;
   error: {
     code: string;
     message: string;
@@ -9,7 +11,7 @@ export interface IFirebaseResponse {
 }
 
 // extend the firebase user object
-export interface IFirebaseUser extends UserInfo {
+export interface IFirebaseUser extends FirebaseAuthTypes.UserInfo {
   firebaseUID: string | null;
 }
 
@@ -31,7 +33,7 @@ export interface IFirebaseUser extends UserInfo {
 export interface IAuthState {
   firebaseUID?: string | null;
   userName: string | null;
-  userToken: string | null;
+  // userToken: string | null;
   userEmail: string | null;
   sessionTimedOut: boolean;
   isLoading: boolean;

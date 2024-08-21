@@ -1,9 +1,9 @@
-import * as React from "react";
-import { Button, IconButton, Tooltip, useTheme } from "react-native-paper";
-import { PreferencesContext } from "../context/PreferencesContext";
+import * as React from 'react';
+import { Button } from 'react-native-paper';
+import { PreferencesContext } from '../context/PreferencesContext';
 
 const ThemeToggle = (): React.ReactNode => {
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
   return (
@@ -13,7 +13,7 @@ const ThemeToggle = (): React.ReactNode => {
       onPress={toggleTheme}
       compact
     >
-      {isThemeDark ? "Light Mode" : "Dark Mode"}
+      {isThemeDark ? 'Light Mode' : 'Dark Mode'}
     </Button>
   );
 };

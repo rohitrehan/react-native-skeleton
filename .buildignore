@@ -1,8 +1,8 @@
-node_modules/
-.expo/
-.expo-shared/
-.vscode/
-.idea/
+node_modules
+.expo
+.expo-shared
+.vscode
+.idea
 .DS_Store
-
+.git 
 build/

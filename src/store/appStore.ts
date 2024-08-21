@@ -1,35 +1,48 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import authReducer from "./authSlice";
-import configReducer from "./configSlice";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  configureStore,
+  ThunkAction,
+  Action,
+  combineReducers,
+} from '@reduxjs/toolkit';
+import authReducer from './authSlice';
+import configReducer from './configSlice';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  persistReducer,
+  persistStore,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from 'redux-persist';
+// import storage from "redux-persist/lib/storage";
 
-let localState: string | undefined;
-
-const getData = async () => {
-  try {
-    const value = await AsyncStorage.getItem("state");
-    if (value !== null) {
-      localState = value;
-    }
-  } catch (e) {
-    console.log("appStore-getData error: ", e);
-  }
-  return "";
+const persistConfig = {
+  key: 'state',
+  storage: AsyncStorage,
 };
 
-getData();
-let localStateJSON = {};
-if (localState !== undefined) {
-  localStateJSON = JSON.parse(localState);
-}
-
-export const appStore = configureStore({
-  reducer: {
+const persistedReducer = persistReducer(
+  persistConfig,
+  combineReducers({
     auth: authReducer,
     config: configReducer,
-  },
-  preloadedState: localStateJSON || {},
+  }),
+);
+
+export const appStore = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
+
+export const persistor = persistStore(appStore);
 
 export type AppDispatch = typeof appStore.dispatch;
 export type RootState = ReturnType<typeof appStore.getState>;

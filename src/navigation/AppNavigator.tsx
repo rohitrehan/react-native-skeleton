@@ -1,9 +1,9 @@
-import * as React from "react";
-import { NavigationContainer, Theme } from "@react-navigation/native";
-import PublicStack from "./PublicStack";
-import { useAppSelector } from "../store/hook";
-import { selectAuthState } from "../store/authSlice";
-import DrawerNavigator from "./DrawerNavigator";
+import * as React from 'react';
+import { NavigationContainer, Theme } from '@react-navigation/native';
+import PublicStack from './PublicStack';
+import { useAppSelector } from '../store/hook';
+import { selectAuthState } from '../store/authSlice';
+import DrawerNavigator from './DrawerNavigator';
 
 const AppNavigator = ({ theme }: { theme: Theme }) => {
   const authState = useAppSelector(selectAuthState);
@@ -13,5 +13,4 @@ const AppNavigator = ({ theme }: { theme: Theme }) => {
     </NavigationContainer>
   );
 };
-
 export default AppNavigator;

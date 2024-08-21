@@ -1,7 +1,7 @@
-import { IAppLanguage, LanguageKey, languages } from "../core/languages";
-import { IAppConfig } from "../interfaces/IAppConfig";
-import { selectConfig } from "../store/configSlice";
-import { useAppSelector } from "../store/hook";
+import { IAppLanguage, languages } from '../core/languages';
+import { IAppConfig } from '../interfaces/IAppConfig';
+import { selectConfig } from '../store/configSlice';
+import { useAppSelector } from '../store/hook';
 
 const useLanguage = (): IAppLanguage => {
   const config: IAppConfig = useAppSelector(selectConfig);
